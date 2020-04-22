@@ -13,9 +13,9 @@
  * Example of usage of this higher-order function:
  * Invoking `processFirstItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'foofoo'.
-*/
+ */
 function processFirstItem(stringList, callback) {
-  return callback(stringList[0])
+    return callback(stringList[0])
 }
 
 // ⭐️ Example Challenge END ⭐️
@@ -27,19 +27,21 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
+ *   A. Counter 1 has a variable that exists in the block scope. Counter two contins a variable that is acessible globally. 
  * 
  * 2. Which of the two uses a closure? How can you tell?
+ *   B. Thechnically they both contain and use closures since a closure is created every time a function is created in JS. 
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
-*/
+ *   C. I would prefer counter one if I was trying to ensure that no other functions had acess to my variables. Code that has been identified elsewhere can be used later. 
+ */
 
 // counter1 code
 function counterMaker() {
-  let count = 0;
-  return function counter() {
-   return count++;
-  }
+    let count = 0;
+    return function counter() {
+        return count++;
+    }
 }
 
 const counter1 = counterMaker();
@@ -48,7 +50,7 @@ const counter1 = counterMaker();
 let count = 0;
 
 function counter2() {
-  return count++;
+    return count++;
 }
 
 
@@ -56,11 +58,12 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
+function inning() {
 
-    /*Code Here*/
+    return Math.floor(Math.random() * 3)
 
 }
+console.log(inning());
 
 /* Task 3: finalScore()
 
@@ -74,12 +77,11 @@ finalScore(inning, 9) might return:
   "Away": 5,
 }
 
-*/ 
+*/
 
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
+function finalScore(inning, num) {
+    let home =
+        let away =
 }
 
 /* Task 4: 
@@ -104,8 +106,6 @@ and returns the score at each pont in the game, like so:
 
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(scoreByInning) {
+    scoreByInning.push(`Inning ${i + 1}: Away ${currentInning.Away} - Home ${currentInning.Home}`)
 }
-
-
