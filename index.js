@@ -67,7 +67,9 @@ console.log(inning());
 
 /* Task 3: finalScore()
 
-Write a higher order function called `finalScore` that accepts the callback function `inning` (from above) and a number of innings and and returns the final score of the game in the form of an object.
+Write a higher order function called `finalScore` that accepts the callback function `inning` 
+(from above) and a number of innings and and returns the final score of
+ the game in the form of an object.
 
 For example, 
 
@@ -76,13 +78,30 @@ finalScore(inning, 9) might return:
   "Home": 11,
   "Away": 5,
 }
-
 */
 
-function finalScore(inning, num) {
-    let home =
-        let away =
+/* 
+write a function called final score
+ create a callback function called inning
+ input inning into the HOF from above
+ also accepts the number of innings 
+ also has to return the final score of the game as an object
+
+ */
+
+function finalScore(inning, inningsNum) {
+    let homeScore = 0;
+    let awayScore = 0;
+    for (let i = 0; i < inningsNum; i++) {
+        homeScore = homeScore + inning();
+        awayScore = awayScore + inning();
+    }
+    return {
+        home: homeScore,
+        away: awayScore,
+    }
 }
+console.log(finalScore(inning, 9))
 
 /* Task 4: 
 
@@ -106,6 +125,25 @@ and returns the score at each pont in the game, like so:
 
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(scoreByInning) {
-    scoreByInning.push(`Inning ${i + 1}: Away ${currentInning.Away} - Home ${currentInning.Home}`)
+function getInningScore(inning) {
+    return {
+        home: inning(),
+        away: inning(),
+    }
 }
+
+function scoreboard(getInningScore, inning, inningsNum) {
+    let scoreByInning = [];
+    let homeScore = 0;
+    let awayScore = 0;
+
+
+    for (let i = 0; i < inningsNum; i++) {
+        const currentInning = getInningScore(inning)
+        homeScore = homeScore + currentInning.home;
+        awayScore = awayScore + currentInning.away;
+        scoreByInning.push(`inning ${i+1}: Away ${currentInning.away} - Home ${currentInning.home}`)
+    }
+    return scoreByInning;
+}
+console.log(scoreboard(getInningScore, inning, 9));
