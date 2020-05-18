@@ -27,13 +27,18 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- *   A. Counter 1 has a variable that exists in the block scope. Counter two contins a variable that is acessible globally. 
+ * 
+ *   A. Counter 1 has a variable that exists in the block scope. Counter two contains a variable that is accessible globally. 
+ * 
  * 
  * 2. Which of the two uses a closure? How can you tell?
- *   B. Thechnically they both contain and use closures since a closure is created every time a function is created in JS. 
+ * 
+ *   B. Technically they both contain and use closures since a closure is created every time a function is created in JS. But number one contains a function inside of another function, so that means it is the one with a closure. 
+ * 
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *   C. I would prefer counter one if I was trying to ensure that no other functions had acess to my variables. Code that has been identified elsewhere can be used later. 
+ * 
+ *   C. I would prefer counter one if I was trying to ensure that no other functions had access to my variables. Code that has been identified elsewhere can be used later. Would2 be better? Here we are not nesting functions was nesting functions? I guess it would be better to understand what is really going on behind the scenes. 
  */
 
 // counter1 code
@@ -58,10 +63,9 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning() {
+function inning() { // inning function
 
     return Math.floor(Math.random() * 3)
-
 }
 console.log(inning());
 
@@ -96,9 +100,10 @@ function finalScore(inning, inningsNum) {
         homeScore = homeScore + inning();
         awayScore = awayScore + inning();
     }
+
     return {
-        home: homeScore,
-        away: awayScore,
+        "homeScore": homeScore, // home score
+        "awayScore": awayScore // away score
     }
 }
 console.log(finalScore(inning, 9))

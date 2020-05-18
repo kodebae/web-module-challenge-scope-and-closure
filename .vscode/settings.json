@@ -20,7 +20,8 @@
         "titleBar.activeForeground": "#15202b",
         "titleBar.border": "#ffc0cb",
         "titleBar.inactiveBackground": "#ffc0cb99",
-        "titleBar.inactiveForeground": "#15202b99"
+        "titleBar.inactiveForeground": "#15202b99",
+        "tab.activeBorder": "#fff3f5"
     },
     "prettier.useTabs": true,
     "prettier.singleQuote": true
