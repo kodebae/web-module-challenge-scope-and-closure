@@ -152,3 +152,4 @@ function scoreboard(getInningScore, inning, inningsNum) {
     return scoreByInning;
 }
 console.log(scoreboard(getInningScore, inning, 9));
+//this is my finished code. Decided not to add the final if else statement for the tied score because I did not see it in the instructions
